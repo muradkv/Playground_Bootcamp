@@ -11,15 +11,15 @@ import UIKit
 
 // Second try ith functions and loops
 
-func beerSong() -> String {
+func beerSong(howManyBeers: Int) -> String {
     var lyrics = ""
     
-    for number in 1...99 {
-        let newLine = "\n\(100 - number) bottles of beer on the wall, \(100 - number) bottles of beer. \nTake one down and pass it around, \(100 - number - 1) bottles of beer on the wall.\n"
+    for number in (1...howManyBeers).reversed() {
+        let newLine = "\n\(number) bottles of beer on the wall, \(number) bottles of beer. \nTake one down and pass it around, \(number - 1) bottles of beer on the wall.\n"
         lyrics += newLine
     }
     
     return lyrics
 }
 
-print(beerSong())
+print(beerSong(howManyBeers: 5))
